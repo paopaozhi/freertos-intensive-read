@@ -21,10 +21,12 @@
 
 TaskHandle_t defaultTaskHandle;
 TaskHandle_t ledTaskHandle;
+TaskHandle_t keyTaskHandle;
 
 void StartDefaultTask(void *argument);
 
 extern void StartLedTask(void *argument);
+extern void StartKeyTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -39,7 +41,7 @@ void MX_FREERTOS_Init(void) {
             "defaultTask",
             128,
             NULL,
-            1,
+            31,
             &defaultTaskHandle
     );
 
@@ -59,9 +61,19 @@ void StartDefaultTask(void *argument) {
             "led",
             64,
             NULL,
-            2,
+            1,
             &ledTaskHandle
     );
+
+    xTaskCreate(
+            StartKeyTask,
+            "key",
+            128,
+            NULL,
+            2,
+            &keyTaskHandle
+    );
+
 
     vTaskDelete(defaultTaskHandle);
     taskEXIT_CRITICAL();

@@ -157,7 +157,16 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+#if 1
+#include <stdio.h>
 
+int _write(int fd, char *ptr, int len)
+{
+//    USART1->CR1 = 0x01;
+    HAL_UART_Transmit(&huart1, (uint8_t*)ptr, len, 0xFFFF);
+    return len;
+}
+#endif
 /* USER CODE END 4 */
 
 /**
