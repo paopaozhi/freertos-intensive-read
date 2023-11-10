@@ -22,8 +22,7 @@ void StartRtcTask(void *argument) {
     for (;;) {
         RTC_TimeShow(sShowTime);
         RTC_DataShow(sShowData);
-        HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-        // printf("time: %s\r\n",sShowTime);
+
         if (!isShowMode) {
             LED_Str((char *) sShowTime);
         } else {
