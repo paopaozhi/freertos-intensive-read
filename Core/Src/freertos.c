@@ -97,9 +97,9 @@ void StartDefaultTask(void *argument) {
     xTaskCreate(
             StartRtcTask,
             "rtc",
-            512,
+            768,
             NULL,
-            3,
+            4,
             &rtcTaskHandle
     );
 
