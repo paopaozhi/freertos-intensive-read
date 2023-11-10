@@ -5,8 +5,8 @@
 #include <string.h>
 #include "led_smg.h"
 
-uint8_t smg_num[18] = {0xfc, 0x60, 0xda, 0xf2, 0x66, 0xb6, 0xbe, 0xe0, 0xfe,
-                       0xf6};
+uint8_t smg_num[18] = {0x02,0x01,0x00,0xfc, 0x60, 0xda, 0xf2, 0x66, 0xb6, 0xbe, 0xe0, 0xfe,
+                       0xf6, 0x0C};
 
 uint8_t smg_buf[8] = {0};
 
@@ -74,7 +74,7 @@ void LED_Refresh(void) {
 
 void LED_Char(uint8_t num, uint8_t t_char) {
     uint32_t i = 0;
-    i = t_char - 48;
+    i = t_char - 45;
     smg_buf[num] = smg_num[i];
 }
 
