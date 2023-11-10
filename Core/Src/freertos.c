@@ -18,15 +18,22 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "main.h"
+#include "../../Drivers/LedSmg/led_smg.h"
 
 TaskHandle_t defaultTaskHandle;
 TaskHandle_t ledTaskHandle;
 TaskHandle_t keyTaskHandle;
+TaskHandle_t ledSmgTaskHandle;
+TaskHandle_t rtcTaskHandle;
 
 void StartDefaultTask(void *argument);
 
 extern void StartLedTask(void *argument);
 extern void StartKeyTask(void *argument);
+
+void StartLedSmgTask(void *argument);
+
+void StartRtcTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -36,6 +43,8 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   * @retval None
   */
 void MX_FREERTOS_Init(void) {
+    LED_SMG_Init();
+    LED_Str("123");
     xTaskCreate(
             StartDefaultTask,
             "defaultTask",
@@ -59,7 +68,7 @@ void StartDefaultTask(void *argument) {
     xTaskCreate(
             StartLedTask,
             "led",
-            64,
+            32,
             NULL,
             1,
             &ledTaskHandle
@@ -75,9 +84,27 @@ void StartDefaultTask(void *argument) {
     );
 
 
+    xTaskCreate(
+            StartLedSmgTask,
+            "ledSmg",
+            64,
+            NULL,
+            3,
+            &ledSmgTaskHandle
+    );
+
+    // 512byte
+    xTaskCreate(
+            StartRtcTask,
+            "rtc",
+            512,
+            NULL,
+            3,
+            &rtcTaskHandle
+    );
+
     vTaskDelete(defaultTaskHandle);
     taskEXIT_CRITICAL();
-
 }
 
 
