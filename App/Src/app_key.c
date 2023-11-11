@@ -62,7 +62,7 @@ void StartKeyTask(void *argument) {
     xTaskCreate(
             StartKeyCallTask,
             "keyCall",
-            256,
+            164, // printf:164 32
             NULL,
             3,
             &keyCallHandle
