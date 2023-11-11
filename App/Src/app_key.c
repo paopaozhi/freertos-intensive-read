@@ -62,7 +62,7 @@ void StartKeyTask(void *argument) {
     xTaskCreate(
             StartKeyCallTask,
             "keyCall",
-            128,
+            164, // printf:164 32
             NULL,
             3,
             &keyCallHandle
@@ -90,6 +90,7 @@ rtcConfigTypedef *pconfigRtc = &configRtc;
 
 void StartKeyCallTask(void *argument) {
     int key;
+    uint32_t free;
     for (;;) {
         xQueueReceive(keyQueueHandle, &key, portMAX_DELAY);
         if (key == keyName0) {
@@ -101,6 +102,8 @@ void StartKeyCallTask(void *argument) {
             HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
         } else if (key == keyName2) {
             // TODO: 测试demo 可替换为其他逻辑
+            free = xPortGetFreeHeapSize();
+            printf("free:%lu\r\n",free);
             HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
         } else {}
     }

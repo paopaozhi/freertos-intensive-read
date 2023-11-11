@@ -10,8 +10,8 @@
 TaskHandle_t rtcConfigHandle;
 QueueHandle_t rtcQueueHandle;
 
-uint8_t sShowTime[40];
-uint8_t sShowData[40];
+uint8_t sShowTime[15];
+uint8_t sShowData[15];
 // 0: time 1: day
 uint8_t isShowMode = 0;
 
@@ -32,7 +32,7 @@ void StartRtcTask(void *argument) {
     xTaskCreate(
             StartRtcConfigTask,
             "rtcConfig",
-            256,
+            64,
             NULL,
             5,
             &rtcConfigHandle
