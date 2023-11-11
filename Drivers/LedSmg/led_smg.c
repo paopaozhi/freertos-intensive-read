@@ -10,7 +10,7 @@ uint8_t smg_num[18] = {0x02,0x01,0x00,0xfc, 0x60, 0xda, 0xf2, 0x66, 0xb6, 0xbe, 
 
 uint8_t smg_buf[8] = {0};
 
-void delay_us(uint32_t us) {
+static void delay_us(uint32_t us) {
     uint32_t delay = (HAL_RCC_GetHCLKFreq() / 4000000 * us);
     while (delay--);
 }
