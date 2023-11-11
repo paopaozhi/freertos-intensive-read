@@ -55,7 +55,7 @@ void StartKeyCallTask(void *argument);
 
 void StartKeyTask(void *argument) {
     keyQueueHandle = xQueueCreate(5, sizeof(uint32_t));
-    if(keyQueueHandle == NULL){
+    if (keyQueueHandle == NULL) {
         Error_Handler();
     }
 
@@ -76,6 +76,18 @@ void StartKeyTask(void *argument) {
     }
 }
 
+rtcConfigTypedef configRtc = {
+        .data.Year = 0x23,
+        .data.Month = RTC_MONTH_NOVEMBER,
+        .data.Date = 0x11,
+        .data.WeekDay = RTC_WEEKDAY_FRIDAY,
+
+        .time.Hours = 0x00,
+        .time.Minutes = 0x00,
+        .time.Seconds = 0x00,
+};
+rtcConfigTypedef *pconfigRtc = &configRtc;
+
 void StartKeyCallTask(void *argument) {
     int key;
     for (;;) {
@@ -85,6 +97,7 @@ void StartKeyCallTask(void *argument) {
             isShowMode = !isShowMode;
         } else if (key == keyName1) {
             // TODO: 测试demo 可替换为其他逻辑
+            xQueueSend(rtcQueueHandle, &pconfigRtc, portMAX_DELAY);
             HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
         } else if (key == keyName2) {
             // TODO: 测试demo 可替换为其他逻辑

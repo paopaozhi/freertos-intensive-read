@@ -31,12 +31,18 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+typedef struct {
+    RTC_TimeTypeDef time;
+    uint32_t status;
+    RTC_DateTypeDef data;
+} rtcConfigTypedef;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -46,7 +52,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+extern QueueHandle_t rtcQueueHandle;
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

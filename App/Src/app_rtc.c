@@ -4,10 +4,11 @@
 
 #include <stdio.h>
 #include "main.h"
-#include "FreeRTOS.h"
-#include "task.h"
 #include "rtc.h"
 #include "../../Drivers/LedSmg/led_smg.h"
+
+TaskHandle_t rtcConfigHandle;
+QueueHandle_t rtcQueueHandle;
 
 uint8_t sShowTime[40];
 uint8_t sShowData[40];
@@ -18,7 +19,24 @@ static void RTC_TimeShow(uint8_t *showtime);
 
 static void RTC_DataShow(uint8_t *showdata);
 
+static void StartRtcConfigTask(void *argument);
+
+static void RTC_Config(RTC_DateTypeDef *date, RTC_TimeTypeDef *time);
+
 void StartRtcTask(void *argument) {
+    rtcQueueHandle = xQueueCreate(5, sizeof(rtcConfigTypedef *));
+    if (rtcQueueHandle == NULL) {
+        Error_Handler();
+    }
+
+    xTaskCreate(
+            StartRtcConfigTask,
+            "rtcConfig",
+            256,
+            NULL,
+            5,
+            &rtcConfigHandle
+    );
     for (;;) {
         RTC_TimeShow(sShowTime);
         RTC_DataShow(sShowData);
@@ -30,6 +48,15 @@ void StartRtcTask(void *argument) {
         }
 
         vTaskDelay(1000);
+    }
+}
+
+rtcConfigTypedef *sConfig;
+
+static void StartRtcConfigTask(void *argument) {
+    for (;;) {
+        xQueueReceive(rtcQueueHandle, (void *) &sConfig, portMAX_DELAY);
+        RTC_Config(&sConfig->data, &sConfig->time);
     }
 }
 
@@ -53,4 +80,9 @@ static void RTC_DataShow(uint8_t *showdata) {
     /* Display time Format : hh:mm:ss */
     sprintf((char *) showdata, "%02d-%02d-%02d", sdatestructureget.Year, sdatestructureget.Month,
             sdatestructureget.Date);
+}
+
+static void RTC_Config(RTC_DateTypeDef *date, RTC_TimeTypeDef *time) {
+    HAL_RTC_SetTime(&hrtc, time, RTC_FORMAT_BCD);
+    HAL_RTC_SetDate(&hrtc, date, RTC_FORMAT_BCD);
 }
