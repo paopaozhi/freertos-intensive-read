@@ -31,12 +31,18 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+typedef struct {
+    RTC_TimeTypeDef time;
+    uint32_t status;
+    RTC_DateTypeDef data;
+} rtcConfigTypedef;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -46,7 +52,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+extern QueueHandle_t rtcQueueHandle;
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -71,6 +77,8 @@ void Error_Handler(void);
 #define KEY0_GPIO_Port GPIOC
 #define KEY1_Pin GPIO_PIN_9
 #define KEY1_GPIO_Port GPIOC
+#define KEY2_Pin GPIO_PIN_2
+#define KEY2_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 

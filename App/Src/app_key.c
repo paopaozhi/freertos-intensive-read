@@ -13,7 +13,8 @@ typedef enum {
 
 typedef enum {
     keyName0 = 0,
-    keyName1
+    keyName1,
+    keyName2
 } keyNameTypedef;
 
 typedef struct {
@@ -22,6 +23,8 @@ typedef struct {
     uint16_t GPIO_Pin;
     keyStateTypedef state;
 } keyTypedef;
+
+extern uint8_t isShowMode;
 
 TaskHandle_t keyCallHandle;
 
@@ -39,13 +42,22 @@ keyTypedef key1 = {
         .GPIO_Pin = KEY1_Pin,
         .state = IDLE_STATE
 };
+keyTypedef key2 = {
+        .name = keyName2,
+        .GPIOx = KEY2_GPIO_Port,
+        .GPIO_Pin = KEY2_Pin,
+        .state = IDLE_STATE
+};
 
 static void key_readState(keyTypedef *key, QueueHandle_t handle);
 
 void StartKeyCallTask(void *argument);
 
 void StartKeyTask(void *argument) {
-    keyQueueHandle = xQueueCreate(10, sizeof(uint32_t));
+    keyQueueHandle = xQueueCreate(5, sizeof(uint32_t));
+    if (keyQueueHandle == NULL) {
+        Error_Handler();
+    }
 
     xTaskCreate(
             StartKeyCallTask,
@@ -59,9 +71,22 @@ void StartKeyTask(void *argument) {
     for (;;) {
         key_readState(&key0, keyQueueHandle);
         key_readState(&key1, keyQueueHandle);
+        key_readState(&key2, keyQueueHandle);
         vTaskDelay(50);
     }
 }
+
+rtcConfigTypedef configRtc = {
+        .data.Year = 0x23,
+        .data.Month = RTC_MONTH_NOVEMBER,
+        .data.Date = 0x11,
+        .data.WeekDay = RTC_WEEKDAY_FRIDAY,
+
+        .time.Hours = 0x00,
+        .time.Minutes = 0x00,
+        .time.Seconds = 0x00,
+};
+rtcConfigTypedef *pconfigRtc = &configRtc;
 
 void StartKeyCallTask(void *argument) {
     int key;
@@ -69,7 +94,12 @@ void StartKeyCallTask(void *argument) {
         xQueueReceive(keyQueueHandle, &key, portMAX_DELAY);
         if (key == keyName0) {
             // TODO: 数码管Mode切换
+            isShowMode = !isShowMode;
         } else if (key == keyName1) {
+            // TODO: 测试demo 可替换为其他逻辑
+            xQueueSend(rtcQueueHandle, &pconfigRtc, portMAX_DELAY);
+            HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+        } else if (key == keyName2) {
             // TODO: 测试demo 可替换为其他逻辑
             HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
         } else {}
