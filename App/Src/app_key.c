@@ -28,7 +28,7 @@ extern uint8_t isShowMode;
 
 TaskHandle_t keyCallHandle;
 
-QueueHandle_t keyQueueHandle;
+xQueueHandle keyQueueHandle;
 
 keyTypedef key0 = {
         .name = keyName0,
@@ -62,9 +62,9 @@ void StartKeyTask(void *argument) {
     xTaskCreate(
             StartKeyCallTask,
             "keyCall",
-            164, // printf:164 32
+            256, // printf:164 32
             NULL,
-            3,
+            11,
             &keyCallHandle
     );
 
@@ -98,7 +98,7 @@ void StartKeyCallTask(void *argument) {
             isShowMode = !isShowMode;
         } else if (key == keyName1) {
             // TODO: 测试demo 可替换为其他逻辑
-            xQueueSend(rtcQueueHandle, &pconfigRtc, portMAX_DELAY);
+            // xQueueSend(rtcQueueHandle, &pconfigRtc, portMAX_DELAY);
             HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
         } else if (key == keyName2) {
             // TODO: 测试demo 可替换为其他逻辑
