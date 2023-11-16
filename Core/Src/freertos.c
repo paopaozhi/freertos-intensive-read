@@ -26,6 +26,7 @@ TaskHandle_t keyTaskHandle;
 TaskHandle_t ledSmgTaskHandle;
 TaskHandle_t rtcTaskHandle;
 TaskHandle_t falshTaskHandle;
+TaskHandle_t usartTaskHandle;
 
 void StartDefaultTask(void *argument);
 
@@ -38,6 +39,8 @@ extern void StartLedSmgTask(void *argument);
 extern void StartRtcTask(void *argument);
 
 extern void StartFalshTask(void *argument);
+
+extern void StartUsartTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -83,7 +86,7 @@ void StartDefaultTask(void *argument) {
             "key",
             128,
             NULL,
-            2,
+            10,
             &keyTaskHandle
     );
 
@@ -107,13 +110,22 @@ void StartDefaultTask(void *argument) {
             &rtcTaskHandle
     );
 
+//    xTaskCreate(
+//            StartFalshTask,
+//            "falsh",
+//            256,
+//            NULL,
+//            1,
+//            &falshTaskHandle
+//    );
+
     xTaskCreate(
-            StartFalshTask,
-            "falsh",
-            256,
+            StartUsartTask,
+            "usart",
+            512,
             NULL,
-            1,
-            &falshTaskHandle
+            8,
+            &usartTaskHandle
     );
 
     vTaskDelete(defaultTaskHandle);
