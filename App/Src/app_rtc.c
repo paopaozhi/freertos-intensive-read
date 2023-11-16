@@ -58,7 +58,7 @@ void StartRtcTask(void *argument) {
 
 uint8_t *sConfig;
 RTC_DateTypeDef test_configDate;
-
+RTC_TimeTypeDef test_configTime;
 static void unpack(char *str) {
     cJSON *json_Handle;
 
@@ -68,6 +68,12 @@ static void unpack(char *str) {
     cJSON *cjson_Month = NULL;
     cJSON *cjson_Date = NULL;
     cJSON *cjson_WeekDay = NULL;
+
+    cJSON *cjson_time = NULL;
+
+    cJSON *cjson_Hours = NULL;
+    cJSON *cjson_Minutes = NULL;
+    cJSON *cjson_Seconds = NULL;
 
     json_Handle = cJSON_Parse(str);
 
@@ -83,6 +89,16 @@ static void unpack(char *str) {
     test_configDate.Date = cjson_Date->valueint;
     test_configDate.WeekDay = cjson_WeekDay->valueint;
 
+    cjson_time = cJSON_GetObjectItem(json_Handle, "time");
+
+    cjson_Hours = cJSON_GetObjectItem(cjson_time, "Hours");
+    cjson_Minutes = cJSON_GetObjectItem(cjson_time, "Minutes");
+    cjson_Seconds = cJSON_GetObjectItem(cjson_time, "Seconds");
+
+    test_configTime.Hours = cjson_Hours->valueint;
+    test_configTime.Minutes = cjson_Minutes->valueint;
+    test_configTime.Seconds = cjson_Seconds->valueint;
+
     cJSON_Delete(json_Handle);
 }
 
@@ -91,7 +107,7 @@ static void StartRtcConfigTask(void *argument) {
         xQueueReceive(rtcQueueHandle, &sConfig, portMAX_DELAY);
 
         unpack((char *) sConfig);
-        RTC_Config(&test_configDate, NULL);
+        RTC_Config(&test_configDate, &test_configTime);
 
         vPortFree(sConfig);
     }
