@@ -17,4 +17,4 @@
 
 ## 精读FreeRTOS
 
-[精读FreeRTOS](Docs/docs/migrationRTOS)
+[精读FreeRTOS](Docs/migrationRTOS.md)

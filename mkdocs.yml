@@ -17,7 +17,7 @@ nav:
 
 theme:
   name: material
-  # custom_dir: overrides
+  custom_dir: Docs/
   language: zh
   features:
     # - announce.dismiss        # 通知关闭
