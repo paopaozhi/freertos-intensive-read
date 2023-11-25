@@ -12,20 +12,22 @@
       
       
       
+        <link rel="next" href="../base_gpio/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>FreeRTOS由浅入深</title>
+        <title>基础外设 - FreeRTOS由浅入深</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -44,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/css/mycss.css">
+      <link rel="stylesheet" href="../assets/css/mycss.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,9 +93,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="FreeRTOS由浅入深" class="md-header__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
+    <a href=".." title="FreeRTOS由浅入深" class="md-header__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              基础外设
             
           </span>
         </div>
@@ -215,9 +222,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="FreeRTOS由浅入深" class="md-nav__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
+    <a href=".." title="FreeRTOS由浅入深" class="md-nav__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     FreeRTOS由浅入深
@@ -241,6 +248,8 @@
       
   
   
+    
+  
   
     
     
@@ -253,19 +262,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/base_index/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -276,13 +283,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_1" id="__nav_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             基础外设
@@ -295,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/base_gpio/" class="md-nav__link">
+      <a href="../base_gpio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -315,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/base_usb/" class="md-nav__link">
+      <a href="../base_usb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -384,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/device_smg/" class="md-nav__link">
+      <a href="../device_smg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/migrationRTOS/" class="md-nav__link">
+      <a href="../migrationRTOS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rtos_queue/" class="md-nav__link">
+      <a href="../rtos_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/chore_translation_ld/" class="md-nav__link">
+      <a href="../chore_translation_ld/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -582,6 +589,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -593,8 +602,56 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="_1">基础外设<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>普通单片机所包含的外设及内核功能，如GPIO、外部中断、串口、NVIC等</p>
+<p>对与STM32F103系列来说对应的外设资源有以下资源</p>
+<ol>
+<li>存储器 <ul>
+<li>FLASH: 64K</li>
+<li>ARAM: 20k</li>
+</ul>
+</li>
+<li>通用输出输出接口(GPIO)<ul>
+<li>几乎全部的端口都可映射到外部中断线</li>
+</ul>
+</li>
+<li>数字模数转换器(ADC)</li>
+<li>直接存储器存取(DMA)</li>
+<li>定时器(TIME)</li>
+<li>实时时钟(RTC)</li>
+<li>看门狗(Watchdog)<ul>
+<li>窗口看门狗</li>
+<li>独立看门狗</li>
+</ul>
+</li>
+<li>
+<p>系统定时器(SysTick)</p>
+<blockquote>
+<p>❗此定时器为内核资源即所有使用Cortex-M3内核的芯片都有</p>
+</blockquote>
+</li>
+<li>
+<p>IIC</p>
+</li>
+<li>通用同步/异步收发器(USART)</li>
+<li>串行外设接口(SPI)</li>
+<li>控制器区域网络(CAN)</li>
+<li>通用串行总线(USB)</li>
+</ol>
+<p>有很多外设吧，但是其实在项目中并不需要使用全部的外设，大部分外设都是具有共同性的，比如：对于定时器来说，几乎所有的定时器的硬件实现方式都是相同的，即学了一种定时器就可以说学习了全部类型的定时器</p>
+<p>废话不多说，让我们开启单片机的旅程一起感受硬件的美丽！</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -613,6 +670,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+        
+          
+          <a href="../base_gpio/" class="md-footer__link md-footer__link--next" aria-label="下一页: GPIO">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                GPIO
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -651,10 +730,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "toc.follow"], "search": "/assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

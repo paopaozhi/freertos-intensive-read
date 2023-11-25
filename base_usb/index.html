@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="../base_gpio/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../device_smg/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>FreeRTOS由浅入深</title>
+        <title>USB🚧 - FreeRTOS由浅入深</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/css/mycss.css">
+      <link rel="stylesheet" href="../assets/css/mycss.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#usb" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,9 +95,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="FreeRTOS由浅入深" class="md-header__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
+    <a href=".." title="FreeRTOS由浅入深" class="md-header__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              USB🚧
             
           </span>
         </div>
@@ -215,9 +224,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="FreeRTOS由浅入深" class="md-nav__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
+    <a href=".." title="FreeRTOS由浅入深" class="md-nav__button md-logo" aria-label="FreeRTOS由浅入深" data-md-component="logo">
       
-  <img src="/assets/images/logo.png" alt="logo">
+  <img src="../assets/images/logo.png" alt="logo">
 
     </a>
     FreeRTOS由浅入深
@@ -241,6 +250,8 @@
       
   
   
+    
+  
   
     
     
@@ -253,19 +264,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/base_index/" class="md-nav__link ">
+            <a href="../base_index/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -282,7 +291,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             基础外设
@@ -295,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/base_gpio/" class="md-nav__link">
+      <a href="../base_gpio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -313,9 +322,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/base_usb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    USB🚧
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -324,6 +353,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stm32f1usbcdc" class="md-nav__link">
+    测试STM32F1USB(CDC)
+  </a>
+  
+    <nav class="md-nav" aria-label="测试STM32F1USB(CDC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb_1" class="md-nav__link">
+    usb发送数据到上位机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubx" class="md-nav__link">
+    安装stm32cubx虚拟串口驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    验证开发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_2" class="md-nav__link">
+    初步了解USB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stm-usblib" class="md-nav__link">
+    探究STM-USBLib
+  </a>
+  
+    <nav class="md-nav" aria-label="探究STM-USBLib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb_3" class="md-nav__link">
+    USB初始化流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -384,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/device_smg/" class="md-nav__link">
+      <a href="../device_smg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/migrationRTOS/" class="md-nav__link">
+      <a href="../migrationRTOS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -475,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rtos_queue/" class="md-nav__link">
+      <a href="../rtos_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/chore_translation_ld/" class="md-nav__link">
+      <a href="../chore_translation_ld/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -582,6 +692,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stm32f1usbcdc" class="md-nav__link">
+    测试STM32F1USB(CDC)
+  </a>
+  
+    <nav class="md-nav" aria-label="测试STM32F1USB(CDC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb_1" class="md-nav__link">
+    usb发送数据到上位机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubx" class="md-nav__link">
+    安装stm32cubx虚拟串口驱动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    验证开发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb_2" class="md-nav__link">
+    初步了解USB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stm-usblib" class="md-nav__link">
+    探究STM-USBLib
+  </a>
+  
+    <nav class="md-nav" aria-label="探究STM-USBLib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb_3" class="md-nav__link">
+    USB初始化流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -593,8 +774,69 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="usb">USB学习<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h1>
+<h2 id="stm32f1usbcdc">测试STM32F1USB(CDC)<a class="headerlink" href="#stm32f1usbcdc" title="Permanent link">&para;</a></h2>
+<p>使用stm32cubx生成测试demo</p>
+<ul>
+<li>基础设置请参考<a href="">基础配置</a></li>
+</ul>
+<p><img alt="时钟配置" src="../figures/base_usb_cubxConfig_clock.png" /></p>
+<p><img alt="USB外设配置" src="../figures/base_usb_cubxConfig_usbDevice.png" /></p>
+<p><img alt="USBDeviceCDC" src="../figures/base_usb_cubxConfig_usbLibCDC.png" /></p>
+<h3 id="usb_1">usb发送数据到上位机<a class="headerlink" href="#usb_1" title="Permanent link">&para;</a></h3>
+<p>通过<code>usbd_cdc_if.c</code>中的<code>CDC_Transmit_FS</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">CDC_Transmit_FS</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">Buf</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Len</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">USBD_OK</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="cm">/* USER CODE BEGIN 7 */</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">USBD_CDC_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hcdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">USBD_CDC_HandleTypeDef</span><span class="o">*</span><span class="p">)</span><span class="n">hUsbDeviceFS</span><span class="p">.</span><span class="n">pClassData</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hcdc</span><span class="o">-&gt;</span><span class="n">TxState</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">USBD_BUSY</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">USBD_CDC_SetTxBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hUsbDeviceFS</span><span class="p">,</span><span class="w"> </span><span class="n">Buf</span><span class="p">,</span><span class="w"> </span><span class="n">Len</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">USBD_CDC_TransmitPacket</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hUsbDeviceFS</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="cm">/* USER CODE END 7 */</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
+<p>在<code>main.c</code>中编写代码,发送<code>Hello USB_CDC</code>到上位机</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1">// 省略cubx生成的初始化代码</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">buf</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello USB_CDC</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">CDC_Transmit_FS</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="stm32cubx">安装stm32cubx虚拟串口驱动<a class="headerlink" href="#stm32cubx" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.st.com/zh/development-tools/stsw-stm32102.html">https://www.st.com/zh/development-tools/stsw-stm32102.html</a></p>
+<blockquote>
+<p>根据自身电脑的架构选择合适的驱动,驱动版本建议选择W8</p>
+</blockquote>
+<p><img alt="USB驱动安装" src="../figures/base_usb_cubxConfig_usbDriveInstallation.png" /></p>
+<h3 id="_1">验证开发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>打开串口调试助手,选择对应的串口号,波特率随意选择不影响实验效果</p>
+<p><img alt="实验结果" src="../figures/base_usb_cuxbConfig_result.png" /></p>
+<h2 id="usb_2">初步了解USB<a class="headerlink" href="#usb_2" title="Permanent link">&para;</a></h2>
+<h2 id="stm-usblib">探究STM-USBLib<a class="headerlink" href="#stm-usblib" title="Permanent link">&para;</a></h2>
+<h3 id="usb_3">USB初始化流程<a class="headerlink" href="#usb_3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>参考链接
+https://blog.csdn.net/jimaofu0494/article/details/109233087</p>
+</blockquote>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -613,6 +855,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../base_gpio/" class="md-footer__link md-footer__link--prev" aria-label="上一页: GPIO">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                GPIO
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../device_smg/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数码管">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                数码管
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -651,10 +931,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "toc.follow"], "search": "/assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
