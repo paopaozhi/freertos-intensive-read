@@ -23,6 +23,7 @@ nav:
 theme:
   name: material
   custom_dir: Docs/
+  docs_dir: Docs/
   language: zh
   features:
     # - announce.dismiss        # 通知关闭
