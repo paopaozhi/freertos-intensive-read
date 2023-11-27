@@ -53,7 +53,15 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+extern void MX_FREERTOS_Init(void);
+#ifdef __cplusplus
+}
+#endif
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */

@@ -42,28 +42,32 @@ extern void StartFalshTask(void *argument);
 
 extern void StartUsartTask(void *argument);
 
-void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+void init(void){
+
+}
 
 /**
   * @brief  FreeRTOS initialization
   * @param  None
   * @retval None
   */
+extern "C" {
+void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+
 void MX_FREERTOS_Init(void) {
     LED_SMG_Init();
-    LED_Str("123");
     xTaskCreate(
             StartDefaultTask,
             "defaultTask",
             128,
-            NULL,
+            nullptr,
             31,
             &defaultTaskHandle
     );
 
     vTaskStartScheduler();
 }
-
+};
 /**
   * @brief  Function implementing the defaultTask thread.
   * @param  argument: Not used
@@ -76,7 +80,7 @@ void StartDefaultTask(void *argument) {
             StartLedTask,
             "led",
             32,
-            NULL,
+            nullptr,
             1,
             &ledTaskHandle
     );

@@ -76,18 +76,6 @@ void StartKeyTask(void *argument) {
     }
 }
 
-rtcConfigTypedef configRtc = {
-        .data.Year = 0x23,
-        .data.Month = RTC_MONTH_NOVEMBER,
-        .data.Date = 0x11,
-        .data.WeekDay = RTC_WEEKDAY_FRIDAY,
-
-        .time.Hours = 0x00,
-        .time.Minutes = 0x00,
-        .time.Seconds = 0x00,
-};
-rtcConfigTypedef *pconfigRtc = &configRtc;
-
 void StartKeyCallTask(void *argument) {
     int key;
     uint32_t free;
