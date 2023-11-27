@@ -7,11 +7,11 @@
 [//]: # (TODO:需要连接到基础配置文章)
 - 基础设置请参考[基础配置]()
 
-![时钟配置](figures/usb_cubxConfig_clock.png)
+![时钟配置](figures/base_usb_cubxConfig_clock.png)
 
-![USB外设配置](figures/usb_cubxConfig_usbDevice.png)
+![USB外设配置](figures/base_usb_cubxConfig_usbDevice.png)
 
-![USBDeviceCDC](figures/usb_cubxConfig_usbLibCDC.png)
+![USBDeviceCDC](figures/base_usb_cubxConfig_usbLibCDC.png)
 
 ### usb发送数据到上位机
 
@@ -52,13 +52,13 @@ int main(void){
 
 > 根据自身电脑的架构选择合适的驱动,驱动版本建议选择W8
 
-![USB驱动安装](figures/usb_cubxConfig_usbDriveInstallation.png)
+![USB驱动安装](figures/base_usb_cubxConfig_usbDriveInstallation.png)
 
 ### 验证开发
 
 打开串口调试助手,选择对应的串口号,波特率随意选择不影响实验效果
 
-![实验结果](figures/usb_cuxbConfig_result.png)
+![实验结果](figures/base_usb_cuxbConfig_result.png)
 
 ## 初步了解USB
 

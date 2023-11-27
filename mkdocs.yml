@@ -8,12 +8,17 @@ repo_url: https://github.com/paopaozhi/freertos-intensive-read
 copyright: Copyright &copy; 2023 paopaozhi
 
 nav:
-  - "外设":
-      - "数码管": "rtc_ledsmg.md"
-      - "USB学习": "usb_study.md"
+  - "基础外设":
+      - base_index.md
+      - "GPIO": "base_gpio.md"
+      - "USB🚧": "base_usb.md"
+  - "设备外设":
+      - "数码管": "device_smg.md"
   - "FreeRTOS":
       - "移植FreeRTOS": "migrationRTOS.md"
-      - "队列": "queue.md"
+      - "队列": "rtos_queue.md"
+  - "杂项":
+      - "链接文件": "chore_translation_ld.md"
 
 theme:
   name: material
@@ -38,7 +43,7 @@ theme:
     - navigation.top # 导航顶部
     - navigation.footer # 导航底部
     - navigation.tracking # 导航跟踪
-    # - search.highlight # 搜索高亮
+    - search.highlight # 搜索高亮
     # - search.share # 搜索分享
     # - search.suggest # 搜索建议
     - toc.follow # 目录跟随
@@ -75,6 +80,10 @@ extra:
     #   link: https://space.bilibili.com/375609633
   generator: false
 
+plugins:
+  - search
+  - section-index
+
 markdown_extensions:
   - abbr
   - admonition
@@ -110,6 +119,9 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+extra_css:
+  - assets/css/mycss.css
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
